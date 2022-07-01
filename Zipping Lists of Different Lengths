@@ -1,0 +1,46 @@
+"""
+The zip() function will only iterate over the smallest list passed. If given 
+lists of different lengths, the resulting combination will only be as long as 
+the smallest list passed. In the following code example, list_two contains more
+elements than list_one so the resulting merged list will only be as long as list_one.
+"""
+
+list_one = ['Joe', 'Mark', 'Jane']
+list_two = [ 100, 34, 87, 23, 65 ]
+merged = zip(list_one, list_two)
+print(list(merged))
+
+# [('Joe', 100), ('Mark', 34), ('Jane', 87)]
+
+"""
+It is possible to use the cycle() function from itertools to repeat values from
+the shorter list. This will allow zip() to iterate over all the elements from
+the longer list. In this example, cycle() is used to repeat values from list_one
+and the resulting merged list will now contain all values from list_two.
+"""
+
+from itertools import cycle
+
+list_one = ['Joe', 'Mark', 'Jane']
+list_two = [ 100, 34, 87, 23, 65 ]
+merged2 = zip(cycle(list_one), list_two)
+print(list(merged2))
+
+#[('Joe', 100), ('Mark', 34), ('Jane', 87), ('Joe', 23), ('Mark', 65)]
+
+
+#%%
+
+# Bingo Card
+
+bingo = ['B', 'I', 'N', 'G', 'O']
+hundred = [str(n) for n in range(1, 101)]
+
+bingo_card = [square[0] + square[1] for square in zip(cycle(bingo), hundred)]
+#print(list(bingo_card))    
+
+for idx in range(0, len(bingo_card), 5):
+    print(bingo_card[idx:idx+5])
+    
+    
+#%%    
