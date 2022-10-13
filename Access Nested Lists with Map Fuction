@@ -25,3 +25,17 @@ if __name__ == "__main__":
 
 
 #%%
+
+
+# https://www.youtube.com/watch?v=8DHhXcd8liQ&ab_channel=DataScienceTutorials
+
+scores = [[1, 35, 80], [2, 32, 75], [3, 30, 82], [4, 33, 75], [5, 37, 60]]
+
+# If attendance i[1] of a student i[0] is above average, add 2 to score i[2] 
+abv_avg = 35
+new_marks = map(lambda x: x[2] + 2 if x[1] >= abv_avg else x[2]-2, scores)
+
+print(list(new_marks))
+
+
+#%%
