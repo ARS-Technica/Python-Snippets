@@ -1,0 +1,14 @@
+
+
+class Solution():
+    def convertNestedLists(self, arr): 
+        print( [list(map(int, subarr)) for subarr in arr] )
+        print( [[int(x) for x in subarr] for subarr in arr] )
+
+
+if __name__ == '__main__':
+    print(Solution().convertNestedLists(arr = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]))
+    # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+
+#%%
