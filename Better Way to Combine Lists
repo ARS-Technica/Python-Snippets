@@ -1,0 +1,8 @@
+loot = ["bow", "helm"]
+chest = ["ruby", "gold"]
+current = ["sword", "shield"]
+
+# Less efficent:
+# new_inventory = loot + chest + current
+
+new_inventory = [*loot, *chest, *current]
