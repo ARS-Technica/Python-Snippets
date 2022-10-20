@@ -1,0 +1,18 @@
+# https://www.youtube.com/watch?v=USUL35RtwO4
+
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __format__(self, format_spec):
+        if format_spec == "scream":
+            return self.name.upper() + "!"
+        elif format_spec == "repeat":
+            return self.name * 3
+        return self.name
+
+
+p = Person("Patrick")
+print(f"{p}", f"{p:scream}", f"{p:repeat}", sep='\n')
+
