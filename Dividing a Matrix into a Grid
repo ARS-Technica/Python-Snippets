@@ -1,0 +1,103 @@
+
+# Three ways to divide a 9x9 Matrix into Sudoku Grids
+# https://stackoverflow.com/questions/68047401/python-algorithm-to-get-all-3x3-grids-in-a-9x9-grid
+
+
+from collections import defaultdict
+
+class Solution:
+    def isValidSudoku(self, board):
+        grid_freq = defaultdict(int)
+        row_freq = defaultdict(int)
+        column_freq = defaultdict(int)  
+        
+ 
+        cells = ((board[row][col] for col in range(j, j + 3) for row in range(i, i + 3))
+            for j in [0, 3, 6]
+            for i in [0, 3, 6])
+
+        for x in cells:
+            print(list(x))
+
+
+if __name__ == '__main__':
+    print(Solution().isValidSudoku(board = 
+[["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]]))              # True
+
+
+#%%
+
+
+from collections import defaultdict
+
+
+class Solution:
+    def isValidSudoku(self, board): 
+        result = []
+        
+        for j in [0, 3, 6]:
+            for i in [0, 3, 6]:
+                grid = []
+                for column in range(j, j + 3):
+                    cells = []
+                    for row in range(i, i + 3):
+                        cells.append(board[row][column])
+                        print(board[row][column])
+                        
+                    print(cells)
+                    grid.append(cells)
+                result.append(grid)
+                    
+        print(result)
+
+        for row in result:
+            print(row)
+
+
+if __name__ == '__main__':
+    print(Solution().isValidSudoku(board = 
+[["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]
+,["1","2","3","4","5","6","7","8","9"]]))              # True
+
+
+#%%
+
+
+# https://www.reddit.com/r/learnpython/comments/dpnm0x/how_to_divide_9x9_matrix_into_nine_3x3_matrices/
+
+a = [
+  [5, 3, 4, 6, 7, 8, 9, 1, 2],
+  [6, 7, 2, 1, 9, 5, 3, 4, 8],
+  [1, 9, 8, 3, 4, 2, 5, 6, 7],
+  [8, 5, 9, 7, 6, 1, 4, 2, 3],
+  [4, 2, 6, 8, 5, 3, 7, 9, 1],
+  [7, 1, 3, 9, 2, 4, 8, 5, 6],
+  [9, 6, 1, 5, 3, 7, 2, 8, 4],
+  [2, 8, 7, 4, 1, 9, 6, 3, 5],
+  [3, 4, 5, 2, 8, 6, 1, 7, 9],
+]
+
+blocks = []
+for i in range(0, 9, 3):
+  for j in range(0, 9, 3):
+    blocks.append(a[i][j:j+3] + a[i+1][j:j+3] + a[i+2][j:j+3])
+    
+[print(block) for block in blocks]
+
+
+#%%
