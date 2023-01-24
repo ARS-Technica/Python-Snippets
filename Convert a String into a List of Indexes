@@ -1,0 +1,7 @@
+class Solution:
+    def isIsomorphic(self, s, t):
+        return [*map(s.index, s)]
+
+
+if __name__ == '__main__':
+    print(Solution().isIsomorphic(s = "egg"))        # [0, 1, 1] 
