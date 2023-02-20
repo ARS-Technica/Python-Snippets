@@ -1,0 +1,15 @@
+# https://www.youtube.com/shorts/iacVuNOcQ-k
+
+
+import operator as op
+
+
+operator: dict = {
+    '+': op.add,
+    '-': op.sub,
+    '*': op.mul,
+    '/': op.truediv,
+    '**':op.pow
+    }
+
+print(operator['**'](2, 5))
