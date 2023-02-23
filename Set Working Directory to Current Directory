@@ -1,0 +1,24 @@
+"""
+Source: https://www.geeksforgeeks.org/get-directory-of-current-python-script/
+
+os.path.realpath() can be used to get the path of the current Python script.
+os.path.realpath() method in Python is used to get the canonical path of the
+specified filename by eliminating any symbolic links encountered in the path.
+A special variable __file__ is passed to the realpath() method to get the path
+of the Python script.
+
+Note: __file__ is the pathname of the file from which the module was loaded if it was loaded from a file.  
+"""
+
+# Current working directory: 'C:\\Users\\Andrew'
+
+import os
+
+# Print current working directory
+print(os.getcwd())
+
+# Change the working directory to the directory this script is running in.
+os.chdir(os.path.realpath(os.path.dirname(__file__)))
+
+print(os.getcwd())
+
