@@ -1,0 +1,8 @@
+old = ['a', 'b', 'a', 'c', 'b', 'a']
+
+print(old)
+
+# Create a list of the unique elements of old in a single line
+new = list(dict.fromkeys(old).keys())
+
+print(new)
