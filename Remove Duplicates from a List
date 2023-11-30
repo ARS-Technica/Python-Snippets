@@ -1,0 +1,6 @@
+# Remove duplicates from a list while preserving the order of its elements
+
+old_list = ['k', 'l', 'k', 'm', 'm', 'n', 'o']
+new_list = list(dict.fromkeys(old_list).keys())
+
+print(new_list)
