@@ -1,0 +1,14 @@
+"""
+Send a GET request to a webpage
+
+requests.get(url): Sends a GET request to the given URL.
+response.status_code: Returns HTTP status code (200 = success).
+response.content: Returns the raw HTML of the page in bytes.
+"""
+
+import requests
+
+response = requests.get('https://www.geeksforgeeks.org/python-programming-language/')
+print(response.status_code)
+print(response.content)
+
