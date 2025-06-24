@@ -1,3 +1,10 @@
+"""
+Parsing HTML with BeautifulSoup
+
+BeautifulSoup(html, parser): Converts HTML into a searchable object. 'html.parser' is the built-in parser.
+soup.prettify(): Formats the HTML nicely for easier reading.
+"""
+
 import requests
 from bs4 import BeautifulSoup
 
